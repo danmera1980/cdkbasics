@@ -1,0 +1,18 @@
+<div>
+  <h1>Transfer Data</h1>
+  <ng-container cdkDropListGroup>
+    <div>
+      <h2>Backlog</h2>
+      <ul cdkDropList [cdkDropListData]="backlog" (cdkDropListDropped)="drop($event)">
+        <li cdkDrag *ngFor="let task of backlog">{{ task }}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h2>Sprint</h2>
+      <ul cdkDropList [cdkDropListData]="sprint" (cdkDropListDropped)="drop($event)">
+        <li cdkDrag *ngFor="let task of sprint">{{ task }}</li>
+      </ul>
+    </div>
+  </ng-container>
+</div>

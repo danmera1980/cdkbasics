@@ -1,0 +1,6 @@
+<div>
+  <h2>Sort Products</h2>
+  <ul cdkDropList (cdkDropListDropped)="drop($event)">
+    <li cdkDrag *ngFor="let product of products">{{ product }}</li>
+  </ul>
+</div>
