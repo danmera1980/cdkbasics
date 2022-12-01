@@ -11,6 +11,10 @@ import { CardComponent } from './components/card/card.component';
 import { DragndropComponent } from './components/cdk/dragndrop/dragndrop.component';
 import { RearrangeComponent } from './components/cdk/rearrange/rearrange.component';
 import { TransferComponent } from './components/cdk/transfer/transfer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ExampleComponent } from './cva/example/example.component';
+import { CustomInputComponent } from './cva/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,18 @@ import { TransferComponent } from './components/cdk/transfer/transfer.component'
     CardComponent,
     DragndropComponent,
     RearrangeComponent,
-    TransferComponent
+    TransferComponent,
+    ExampleComponent,
+    CustomInputComponent,
   ],
   imports: [
     BrowserModule,
     ScrollingModule,
     OverlayModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

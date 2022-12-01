@@ -1,0 +1,28 @@
+<h1>Value: {{ form.get('car')?.value }}</h1>
+<h1>Touched: {{ form.get('car')?.touched }}</h1>
+<h1>Dirty: {{ form.get('car')?.dirty }}</h1>
+<h1>Error: {{ form.get('car')?.hasError('required') }}</h1>
+
+
+<form [formGroup]="form" (ngSubmit)="save(form)">
+  <div class="form-group">
+    <label for="name">Name <span class="text-danger">*</span></label>
+    <input type="text" class="form-control" id="name"
+      placeholder="Name"
+      formControlName="name"
+      required=""
+    >
+    <p class="text-danger" *ngIf="form.get('name')?.dirty && form.get('name')?.hasError('required')">The name is required</p>
+  </div>
+
+  <div class="form-group">
+    <label for="car">Car <span class="text-danger">*</span></label>
+    <app-custom-input id="car" formControlName="car"></app-custom-input>
+    <p class="text-danger" *ngIf="form.get('car')?.dirty && form.get('car')?.hasError('required')">The car is required</p>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn-success">Save</button>
+    <button type="button" class="btn-outline-danger" (click)="disableAll()">Disable All</button>
+  </div>
+</form>
